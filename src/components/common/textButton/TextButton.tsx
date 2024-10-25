@@ -1,26 +1,28 @@
-import {CustomText} from '@components/componentsIndex';
-import React, {FC, memo} from 'react';
+import { CustomText } from '@components/componentsIndex';
+import color from '@theme/color';
+import font from '@theme/font';
+import React, { FC, memo, useMemo, useRef } from 'react';
 import {
   ActivityIndicator,
+  Animated,
   ColorValue,
   GestureResponderEvent,
   TextStyle,
   TouchableHighlight,
+  View,
 } from 'react-native';
-import {styles} from './textButton.style';
-import color from '@theme/color';
+import { styles } from './textButton.style';
 
 interface TextButtonProps {
   type: 'onlyText' | 'textButton' | 'outlinedButton';
   label: string;
   labelStyle?: TextStyle;
+  leftIcon?: React.JSX.ElementType;
+  underlayColor?: ColorValue;
+  disabled?: boolean;
+  isLoading?: boolean;
   onLongPress?: (event: GestureResponderEvent) => void;
   onPress?: (event: GestureResponderEvent) => void;
-  onPressIn?: (event: GestureResponderEvent) => void;
-  onPressOut?: (event: GestureResponderEvent) => void;
-  disabled?: boolean;
-  underlayColor?: ColorValue;
-  isLoading?: boolean;
 }
 
 const TextButton: FC<TextButtonProps> = ({
@@ -29,60 +31,64 @@ const TextButton: FC<TextButtonProps> = ({
   labelStyle,
   onLongPress,
   onPress,
-  onPressIn,
-  onPressOut,
   disabled,
   underlayColor,
   isLoading,
+  leftIcon,
 }) => {
-  return type == 'textButton' ? (
-    <TouchableHighlight
-      style={styles.textButton}
-      activeOpacity={1}
-      disabled={disabled}
-      onLongPress={onLongPress}
-      onPressIn={onPressIn}
-      onPressOut={onPressOut}
-      onPress={onPress}
-      underlayColor={underlayColor}>
-      {isLoading ? (
-        <ActivityIndicator size={'large'} color={color.background} />
-      ) : (
-        <CustomText textStyle={labelStyle}>{label}</CustomText>
-      )}
-    </TouchableHighlight>
-  ) : type == 'onlyText' ? (
-    <TouchableHighlight
-      style={styles.onlyTextButton}
-      activeOpacity={1}
-      disabled={disabled}
-      onLongPress={onLongPress}
-      onPressIn={onPressIn}
-      onPressOut={onPressOut}
-      onPress={onPress}
-      underlayColor={underlayColor}>
-      {isLoading ? (
-        <ActivityIndicator size={'large'} color={color.background} />
-      ) : (
-        <CustomText textStyle={labelStyle}>{label}</CustomText>
-      )}
-    </TouchableHighlight>
-  ) : (
-    <TouchableHighlight
-      style={styles.outlinedButton}
-      activeOpacity={1}
-      disabled={disabled}
-      onLongPress={onLongPress}
-      onPressIn={onPressIn}
-      onPressOut={onPressOut}
-      onPress={onPress}
-      underlayColor={underlayColor}>
-      {isLoading ? (
-        <ActivityIndicator size={'large'} color={color.background} />
-      ) : (
-        <CustomText textStyle={labelStyle}>{label}</CustomText>
-      )}
-    </TouchableHighlight>
+  const scale = useRef(new Animated.Value(1)).current;
+
+  const handlePressIn = () => {
+    Animated.spring(scale, {
+      toValue: 0.9,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const handlePressOut = () => {
+    Animated.spring(scale, {
+      toValue: 1,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const buttonStyles = {
+    transform: [{scale}],
+  };
+
+  const buttonStyle =
+    type === 'textButton'
+      ? styles.textButton
+      : type === 'onlyText'
+      ? styles.onlyTextButton
+      : styles.outlinedButton;
+
+  const LeftIcon = useMemo(() => leftIcon as React.JSX.ElementType, [leftIcon]);
+  const labelStyles = {...labelStyle, fontFamily: font.satoshiBlack};
+
+  return (
+    <Animated.View style={buttonStyles}>
+      <TouchableHighlight
+        style={buttonStyle}
+        activeOpacity={1}
+        disabled={disabled}
+        onLongPress={onLongPress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        onPress={onPress}
+        underlayColor={underlayColor}>
+        <>
+          {type !== 'onlyText' && leftIcon && <LeftIcon />}
+          <View style={styles.titleView}>
+            {isLoading ? (
+              <ActivityIndicator size={'small'} color={color.background} />
+            ) : (
+              <CustomText textStyle={labelStyles}>{label}</CustomText>
+            )}
+          </View>
+        </>
+      </TouchableHighlight>
+    </Animated.View>
   );
 };
 

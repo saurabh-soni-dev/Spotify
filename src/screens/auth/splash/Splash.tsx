@@ -4,10 +4,10 @@ import {
   TextButton,
 } from '@components/componentsIndex';
 import imageIndex from '@imageIndex';
+import svgIndex from '@svgIndex';
 import color from '@theme/color';
-import {Log} from '@utility/log';
 import React, {FC} from 'react';
-import {Image, View} from 'react-native';
+import {Image, Platform, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {styles} from './splash.style';
 import useSplash from './useSplash';
@@ -39,34 +39,47 @@ const Splash: FC = () => {
             label="Sign up for free"
             labelStyle={styles.signupText}
             onPress={() => navigateToScreen(1)}
-            underlayColor={color.primary}
+            underlayColor={color.green600}
           />
-          <TextButton
-            type="outlinedButton"
-            label="Continue with phone number"
-            labelStyle={styles.loginText}
-            onPress={() => navigateToScreen(1)}
-            underlayColor={color.inactive}
-          />
+          {Platform.OS === 'ios' ? (
+            <TextButton
+              type="outlinedButton"
+              label="Continue with Apple"
+              labelStyle={styles.loginText}
+              onPress={() => navigateToScreen(2)}
+              underlayColor={color.gray400}
+              leftIcon={svgIndex.apple}
+            />
+          ) : (
+            <TextButton
+              type="outlinedButton"
+              label="Continue with phone number"
+              labelStyle={styles.loginText}
+              onPress={() => navigateToScreen(3)}
+              underlayColor={color.gray400}
+            />
+          )}
           <TextButton
             type="outlinedButton"
             label="Continue with Google"
             labelStyle={styles.loginText}
-            onPress={() => navigateToScreen(1)}
-            underlayColor={color.inactive}
+            onPress={() => navigateToScreen(4)}
+            underlayColor={color.gray400}
+            leftIcon={svgIndex.google}
           />
           <TextButton
             type="outlinedButton"
             label="Continue with Facebook"
             labelStyle={styles.loginText}
-            onPress={() => navigateToScreen(1)}
-            underlayColor={color.inactive}
+            onPress={() => navigateToScreen(5)}
+            underlayColor={color.gray400}
+            leftIcon={svgIndex.facebook}
           />
           <TextButton
             type="onlyText"
             label="Log in"
             labelStyle={styles.loginText}
-            onPress={() => navigateToScreen(1)}
+            onPress={() => navigateToScreen(6)}
           />
         </View>
       </LinearGradient>
