@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 15,
   },
   leftIconView: {
     height: 32,
