@@ -6,7 +6,7 @@ const useSplash = () => {
 
     //** Navigate to signup, login, mobile login, google, facebook */
     const navigateToScreen = useCallback((index:number)=>{
-switch (index) {
+    switch (index) {
     case 1:
         navigation.navigate('Signup')
         break;
