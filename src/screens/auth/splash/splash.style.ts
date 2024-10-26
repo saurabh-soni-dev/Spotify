@@ -29,18 +29,13 @@ export const styles = StyleSheet.create({
   sloganText: {
     textAlign: 'center',
     fontFamily: font.satoshiBold,
-    fontSize: hp('4.6%'),
-    lineHeight: 42,
-    color: color.text,
+    fontSize: 34,
+    color: color.white,
   },
   signupText: {
-    fontFamily: font.satoshiBold,
-    fontSize: hp('2.2%'),
-    color: color.background,
+    color: color.backgroundDark,
   },
   loginText: {
-    fontFamily: font.satoshiBold,
-    fontSize: hp('2.2%'),
-    color: color.text,
+    color: color.white,
   },
 });

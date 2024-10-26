@@ -1,10 +1,13 @@
 export default {
-  green500: '#22c55e',
-  green600: '#16a34a',
-  background: '#000',
-  text: '#FFFFFF',
+  primary: '#1BB954',
+  buttonHover: '#18A74C',
   backgroundDark: '#121212',
   backgroundLight: '#1F1F1F',
-  inactive: '#B3B3B3',
-  gray400: '#52525b',
+  inactive: '#b3b3b3',
+  gray: '#535353',
+
+  //
+  black: '#000000',
+  white: '#FFFFFF',
+  red: '#Cf2f12',
 };

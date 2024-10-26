@@ -27,7 +27,7 @@ const CustomStatusBar: FC<CustomStatusBarProps> = ({
       style={[
         {
           height: insets.top,
-          backgroundColor: backgroundColor ?? color.background,
+          backgroundColor: backgroundColor ?? color.backgroundDark,
         },
       ]}>
       <StatusBar

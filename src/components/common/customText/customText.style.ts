@@ -6,6 +6,6 @@ export const styles = StyleSheet.create({
   textStyle: {
     fontFamily: font.satoshiRegular,
     fontSize: 14,
-    color: color.text,
+    color: color.white,
   },
 });

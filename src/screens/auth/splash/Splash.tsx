@@ -16,18 +16,18 @@ const Splash: FC = () => {
   const {navigateToScreen} = useSplash();
   return (
     <View style={styles.container}>
-      <CustomStatusBar backgroundColor={color.background} />
+      <CustomStatusBar backgroundColor={color.backgroundDark} />
       <LinearGradient
         start={{x: 0.0, y: -2}}
         end={{x: 0.0, y: 0.5}}
-        colors={[color.inactive, color.background]}
+        colors={[color.inactive, color.gray, color.backgroundDark]}
         style={styles.linearGradient}>
         <View style={styles.logoView}>
           <Image
             source={imageIndex.appLogo}
             resizeMode="contain"
             style={styles.logo}
-            tintColor={color.text}
+            tintColor={color.white}
           />
           <CustomText textStyle={styles.sloganText}>
             Millions of songs.{'\n'}Free on Spotify.
@@ -39,7 +39,7 @@ const Splash: FC = () => {
             label="Sign up for free"
             labelStyle={styles.signupText}
             onPress={() => navigateToScreen(1)}
-            underlayColor={color.green600}
+            underlayColor={color.buttonHover}
           />
           {Platform.OS === 'ios' ? (
             <TextButton
@@ -47,7 +47,7 @@ const Splash: FC = () => {
               label="Continue with Apple"
               labelStyle={styles.loginText}
               onPress={() => navigateToScreen(2)}
-              underlayColor={color.gray400}
+              underlayColor={color.gray}
               leftIcon={svgIndex.apple}
             />
           ) : (
@@ -56,7 +56,7 @@ const Splash: FC = () => {
               label="Continue with phone number"
               labelStyle={styles.loginText}
               onPress={() => navigateToScreen(3)}
-              underlayColor={color.gray400}
+              underlayColor={color.gray}
             />
           )}
           <TextButton
@@ -64,7 +64,7 @@ const Splash: FC = () => {
             label="Continue with Google"
             labelStyle={styles.loginText}
             onPress={() => navigateToScreen(4)}
-            underlayColor={color.gray400}
+            underlayColor={color.gray}
             leftIcon={svgIndex.google}
           />
           <TextButton
@@ -72,7 +72,7 @@ const Splash: FC = () => {
             label="Continue with Facebook"
             labelStyle={styles.loginText}
             onPress={() => navigateToScreen(5)}
-            underlayColor={color.gray400}
+            underlayColor={color.gray}
             leftIcon={svgIndex.facebook}
           />
           <TextButton

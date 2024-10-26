@@ -1,7 +1,6 @@
-import { CustomText } from '@components/componentsIndex';
+import {CustomText} from '@components/componentsIndex';
 import color from '@theme/color';
-import font from '@theme/font';
-import React, { FC, memo, useMemo, useRef } from 'react';
+import React, {FC, memo, useMemo, useRef} from 'react';
 import {
   ActivityIndicator,
   Animated,
@@ -11,7 +10,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-import { styles } from './textButton.style';
+import {styles} from './textButton.style';
 
 interface TextButtonProps {
   type: 'onlyText' | 'textButton' | 'outlinedButton';
@@ -64,7 +63,10 @@ const TextButton: FC<TextButtonProps> = ({
       : styles.outlinedButton;
 
   const LeftIcon = useMemo(() => leftIcon as React.JSX.ElementType, [leftIcon]);
-  const labelStyles = {...labelStyle, fontFamily: font.satoshiBlack};
+  const labelStyles = {
+    ...labelStyle,
+    ...styles.buttonLable,
+  };
 
   return (
     <Animated.View style={buttonStyles}>
@@ -81,7 +83,7 @@ const TextButton: FC<TextButtonProps> = ({
           {type !== 'onlyText' && leftIcon && <LeftIcon />}
           <View style={styles.titleView}>
             {isLoading ? (
-              <ActivityIndicator size={'small'} color={color.background} />
+              <ActivityIndicator size={'small'} color={color.backgroundDark} />
             ) : (
               <CustomText textStyle={labelStyles}>{label}</CustomText>
             )}
