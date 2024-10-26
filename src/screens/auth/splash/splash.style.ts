@@ -20,11 +20,12 @@ export const styles = StyleSheet.create({
   },
   buttonView: {
     flex: 1,
-    padding: hp('3%'),
+    padding: 24,
   },
   logo: {
-    height: hp('20%'),
-    width: wp('22%'),
+    height: 75,
+    width: 75,
+    marginBottom: 25,
   },
   sloganText: {
     textAlign: 'center',

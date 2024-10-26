@@ -80,6 +80,7 @@ const Splash: FC = () => {
             label="Log in"
             labelStyle={styles.loginText}
             onPress={() => navigateToScreen(6)}
+            underlayColor={color.backgroundDark}
           />
         </View>
       </LinearGradient>
