@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   headerTitleStyle: {
     flex: 0.9,
     textAlign: 'center',
-    fontSize: 22,
-    fontFamily: font.satoshiBold,
+    fontFamily: font.satoshiBlack,
+    fontSize: 17,
   },
 });

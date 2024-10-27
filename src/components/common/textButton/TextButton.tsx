@@ -9,6 +9,7 @@ import {
   TextStyle,
   TouchableHighlight,
   View,
+  ViewStyle,
 } from 'react-native';
 import {styles} from './textButton.style';
 
@@ -22,6 +23,7 @@ interface TextButtonProps {
   isLoading?: boolean;
   onLongPress?: (event: GestureResponderEvent) => void;
   onPress?: (event: GestureResponderEvent) => void;
+  buttonContainerStyle?: ViewStyle;
 }
 
 const TextButton: FC<TextButtonProps> = ({
@@ -34,6 +36,7 @@ const TextButton: FC<TextButtonProps> = ({
   underlayColor,
   isLoading,
   leftIcon,
+  buttonContainerStyle,
 }) => {
   const scale = useRef(new Animated.Value(1)).current;
 
@@ -71,7 +74,7 @@ const TextButton: FC<TextButtonProps> = ({
   return (
     <Animated.View style={buttonStyles}>
       <TouchableHighlight
-        style={buttonStyle}
+        style={[buttonStyle, buttonContainerStyle]}
         activeOpacity={1}
         disabled={disabled}
         onLongPress={onLongPress}

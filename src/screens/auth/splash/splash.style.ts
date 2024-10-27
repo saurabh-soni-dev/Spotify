@@ -1,10 +1,6 @@
 import color from '@theme/color';
 import font from '@theme/font';
 import {StyleSheet} from 'react-native';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
 export const styles = StyleSheet.create({
   container: {
@@ -29,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   sloganText: {
     textAlign: 'center',
-    fontFamily: font.satoshiBold,
+    fontFamily: font.satoshiBlack,
     fontSize: 34,
     color: color.white,
   },

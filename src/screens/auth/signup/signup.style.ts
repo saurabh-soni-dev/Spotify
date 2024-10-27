@@ -11,4 +11,19 @@ export const styles = StyleSheet.create({
     backgroundColor: color.backgroundDark,
     paddingHorizontal: 24,
   },
+  emailStyle: {
+    marginTop: 30,
+  },
+  nextButton: {
+    backgroundColor: color.inactive,
+    alignSelf: 'center',
+    paddingHorizontal: 40,
+    marginTop: 20,
+  },
+  focusNextButton: {
+    backgroundColor: color.white,
+    alignSelf: 'center',
+    paddingHorizontal: 40,
+    marginTop: 20,
+  },
 });

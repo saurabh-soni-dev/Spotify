@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   textButton: {
-    width: '100%',
+    // width: '100%',
     backgroundColor: color.primary,
     height: 50,
     borderRadius: 50,
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   outlinedButton: {
-    width: '100%',
+    // width: '100%',
     backgroundColor: 'transparent',
     height: 50,
     borderRadius: 50,
@@ -26,12 +26,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   onlyTextButton: {
-    width: '100%',
+    // width: '100%',
     backgroundColor: 'transparent',
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
+    borderRadius: 50,
   },
   titleView: {
     flex: 1,
