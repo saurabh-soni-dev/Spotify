@@ -140,7 +140,7 @@ const CustomTextInput: FC<CustomTextInputProps> = ({
             activeOpacity={0.6}
             style={styles.passwordIcon}
             onPress={secureTextEntryHandler}>
-            {visiblePassword ? <SvgIndex.google /> : <SvgIndex.facebook />}
+            {visiblePassword ? <SvgIndex.openEye /> : <SvgIndex.closeEye />}
           </TouchableOpacity>
         )}
       </View>
