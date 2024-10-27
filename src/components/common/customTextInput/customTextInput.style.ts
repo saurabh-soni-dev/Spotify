@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     fontFamily: font.satoshiBlack,
     fontSize: 34,
     color: color.white,
-    marginBottom: 12,
+    marginBottom: 10,
   },
   inputBoxStyle: {
     flexDirection: 'row',
