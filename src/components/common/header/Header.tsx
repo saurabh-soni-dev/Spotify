@@ -1,7 +1,7 @@
 import {CustomText} from '@components/componentsIndex';
 import SvgIndex from '@svgIndex';
 import React, {FC, memo, useCallback, useMemo} from 'react';
-import {TextStyle, TouchableOpacity, View} from 'react-native';
+import {Platform, TextStyle, TouchableOpacity, View} from 'react-native';
 import {styles} from './header.style';
 import {useAuthNavigation} from '@hooks/useAppNavigation';
 
@@ -14,7 +14,9 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({
   title,
   titleStyle,
-  leftIcon = SvgIndex.leftIcon,
+  leftIcon = Platform.OS == 'ios'
+    ? SvgIndex.leftIcon
+    : SvgIndex.leftIconAndroid,
 }) => {
   const navigation = useAuthNavigation();
   const LeftIcon = useMemo(() => leftIcon as React.JSX.ElementType, [leftIcon]);
