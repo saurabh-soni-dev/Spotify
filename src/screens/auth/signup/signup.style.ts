@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     marginTop: 30,
   },
   nextButton: {
-    backgroundColor: color.inactive,
+    backgroundColor: color.gray,
     alignSelf: 'center',
     paddingHorizontal: 40,
     marginTop: 20,

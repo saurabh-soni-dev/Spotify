@@ -28,6 +28,7 @@ const useResponsive = () => {
   }, [height]);
 
   return {
+    scale,
     responsiveFontSize,
     responsiveWidth,
     responsiveHeight,

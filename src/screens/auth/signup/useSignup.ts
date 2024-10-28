@@ -5,7 +5,7 @@ import {useCallback, useEffect, useState} from 'react';
 
 const useSignup = () => {
   const navigation = useAuthNavigation();
-  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState<string>('demo@gmail.com');
   const [error, setError] = useState<string>('');
   const [isNext, setIsNext] = useState<boolean>(false);
 
@@ -38,7 +38,13 @@ const useSignup = () => {
   // onpress next
   const onpressNext = () => navigation.goBack();
 
-  return {email, error, isNext, updateFieldValue, onpressNext};
+  return {
+    email,
+    error,
+    isNext,
+    updateFieldValue,
+    onpressNext,
+  };
 };
 
 export default useSignup;
