@@ -1,5 +1,6 @@
 import color from '@theme/color';
 import {StyleSheet} from 'react-native';
+import {scale} from 'react-native-size-scaling';
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,21 +10,21 @@ export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: color.backgroundDark,
-    paddingHorizontal: 24,
+    paddingHorizontal: scale(24),
   },
   emailStyle: {
-    marginTop: 30,
+    marginTop: scale(30),
   },
   nextButton: {
     backgroundColor: color.gray,
     alignSelf: 'center',
-    paddingHorizontal: 40,
-    marginTop: 20,
+    paddingHorizontal: scale(40),
+    marginTop: scale(20),
   },
   focusNextButton: {
     backgroundColor: color.white,
     alignSelf: 'center',
-    paddingHorizontal: 40,
-    marginTop: 20,
+    paddingHorizontal: scale(40),
+    marginTop: scale(20),
   },
 });

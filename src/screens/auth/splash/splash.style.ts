@@ -1,6 +1,7 @@
 import color from '@theme/color';
 import font from '@theme/font';
 import {StyleSheet} from 'react-native';
+import {scale} from 'react-native-size-scaling';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,17 +17,17 @@ export const styles = StyleSheet.create({
   },
   buttonView: {
     flex: 1,
-    padding: 24,
+    padding: scale(24),
   },
   logo: {
-    height: 75,
-    width: 75,
-    marginBottom: 25,
+    height: scale(75),
+    width: scale(75),
+    marginBottom: scale(25),
   },
   sloganText: {
     textAlign: 'center',
     fontFamily: font.satoshiBlack,
-    fontSize: 34,
+    fontSize: scale(34),
     color: color.white,
   },
   signupText: {

@@ -1,38 +1,39 @@
 import color from '@theme/color';
 import font from '@theme/font';
 import {StyleSheet} from 'react-native';
+import {scale} from 'react-native-size-scaling';
 
 export const styles = StyleSheet.create({
   textButton: {
     // width: '100%',
     backgroundColor: color.primary,
-    height: 50,
-    borderRadius: 50,
-    marginBottom: 10,
+    height: scale(50),
+    borderRadius: scale(50),
+    marginBottom: scale(10),
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: scale(20),
   },
   outlinedButton: {
     // width: '100%',
     backgroundColor: 'transparent',
-    height: 50,
-    borderRadius: 50,
-    borderWidth: 0.4,
-    borderColor: color.inactive,
-    marginBottom: 10,
+    height: scale(50),
+    borderRadius: scale(50),
+    borderWidth: scale(0.6),
+    borderColor: color.gray,
+    marginBottom: scale(10),
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: scale(20),
   },
   onlyTextButton: {
     // width: '100%',
     backgroundColor: 'transparent',
-    height: 50,
+    height: scale(50),
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 10,
-    borderRadius: 50,
+    marginBottom: scale(10),
+    borderRadius: scale(50),
   },
   titleView: {
     flex: 1,
@@ -41,6 +42,6 @@ export const styles = StyleSheet.create({
   },
   buttonLable: {
     fontFamily: font.satoshiBlack,
-    fontSize: 17,
+    fontSize: scale(17),
   },
 });
