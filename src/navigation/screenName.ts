@@ -1,6 +1,7 @@
-export default{
-    splash:'Splash',
-    singup:'Signup',
-    login:'Login',
-    loginMobile:'LoginMobile',
-}
+export default {
+  splash: 'Splash',
+  singup: 'Signup',
+  login: 'Login',
+  loginMobile: 'LoginMobile',
+  homeBottomTab: 'homeBottomTab',
+};

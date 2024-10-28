@@ -59,7 +59,7 @@ const useLogin = () => {
 
   //** On press next button */
   const onpressLogin = () => {
-    navigation.goBack();
+    navigation.navigate('HomeBottomTab');
     // Handle the next button logic here
   };
 

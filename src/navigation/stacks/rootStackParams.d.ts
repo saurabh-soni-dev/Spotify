@@ -1,6 +1,7 @@
-export type RootStackParams={
-    Splash:undefined,
-    Signup:undefined
-    Login:undefined
-    LoginMobile:undefined
-}
+export type RootStackParams = {
+  Splash: undefined;
+  Signup: undefined;
+  Login: undefined;
+  LoginMobile: undefined;
+  HomeBottomTab: undefined;
+};
