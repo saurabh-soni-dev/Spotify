@@ -4,6 +4,7 @@ import TextButton from './common/textButton/TextButton';
 import Header from './common/header/Header';
 import CustomTextInput from './common/customTextInput/CustomTextInput';
 import ScalePress from './common/scalePress/ScalePress';
+import CustomSafeAreaView from './common/customSafeAreaView/customSafeAreaView';
 export {
   CustomStatusBar,
   CustomText,
@@ -11,4 +12,5 @@ export {
   Header,
   CustomTextInput,
   ScalePress,
+  CustomSafeAreaView,
 };

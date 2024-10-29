@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native';
-import React, { FC } from 'react';
+import { CustomSafeAreaView } from '@components/componentsIndex';
 import { withPlayer } from '@components/playerIndex';
+import React, { FC } from 'react';
+import { Text } from 'react-native';
 
 const Home: FC = () => {
   return (
-    <View>
+    <CustomSafeAreaView>
       <Text>Home</Text>
-    </View>
+    </CustomSafeAreaView>
   );
 };
 
