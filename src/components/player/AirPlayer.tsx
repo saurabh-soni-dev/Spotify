@@ -9,7 +9,7 @@ import ImageColors from 'react-native-image-colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {scale} from 'react-native-size-scaling';
 import {usePlaybackState, useProgress} from 'react-native-track-player';
-import {styles} from './style.airPlayer';
+import {styles} from './airPlayer.style';
 
 const AirPlayer: FC = () => {
   const [colors, setColors] = useState(['#666', '#420']);
