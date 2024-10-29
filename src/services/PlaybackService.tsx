@@ -1,5 +1,9 @@
-import TrackPlayer, { Capability, Event } from 'react-native-track-player';
-import { usePlayerStore } from './usePlayerStore';
+import TrackPlayer, {
+  AppKilledPlaybackBehavior,
+  Capability,
+  Event,
+} from 'react-native-track-player';
+import {usePlayerStore} from './usePlayerStore';
 
 const PlaybackService = async () => {
   TrackPlayer.addEventListener(Event.RemotePlay, () => {
@@ -38,6 +42,10 @@ const PlaybackService = async () => {
       Capability.Stop,
     ],
     compactCapabilities: [Capability.Play, Capability.Pause],
+    android: {
+      // This is the default behavior
+      appKilledPlaybackBehavior: AppKilledPlaybackBehavior.ContinuePlayback,
+    },
   });
 };
 
