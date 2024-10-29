@@ -145,7 +145,6 @@ const withPlayer = <P extends object>(
                   </ScrollView>
                 </Animated.View>
               )}
-
               <Animated.View
                 style={[styles.collapsedPlayer, collapsedOpacityStyle]}>
                 <AirPlayer />

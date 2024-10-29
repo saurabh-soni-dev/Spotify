@@ -1,6 +1,12 @@
 import {CustomText} from '@components/componentsIndex';
 import React, {FC, memo, useEffect, useState} from 'react';
-import {Dimensions, LayoutChangeEvent, StyleSheet, View} from 'react-native';
+import {
+  Dimensions,
+  LayoutChangeEvent,
+  StyleSheet,
+  TextStyle,
+  View,
+} from 'react-native';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -11,11 +17,10 @@ import Animated, {
 
 interface SlidingTextProps {
   text?: string;
-  fontSize?: number;
-  fontFamily?: string;
+  style?: TextStyle;
 }
 
-const SlidingText: FC<SlidingTextProps> = ({text, fontFamily, fontSize}) => {
+const SlidingText: FC<SlidingTextProps> = ({text, style}) => {
   const [textWidth, setTextWidth] = useState<number>(0);
   const containerWidth = Dimensions.get('window').width - 130;
 
@@ -49,9 +54,7 @@ const SlidingText: FC<SlidingTextProps> = ({text, fontFamily, fontSize}) => {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.textContainer, animatedStyle]}>
-        <CustomText
-          textStyle={{fontFamily: fontFamily, fontSize: fontSize}}
-          onLayout={handleTextLayout}>
+        <CustomText textStyle={style} onLayout={handleTextLayout}>
           {text}
         </CustomText>
       </Animated.View>

@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   playerContainer: {
     position: 'absolute',
     width: '100%',
-    bottom: 0,
+    bottom: 5,
     zIndex: 1,
     overflow: 'hidden',
     backgroundColor: color.transparent,
@@ -20,5 +20,6 @@ export const styles = StyleSheet.create({
   collapsedPlayer: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 5,
   },
 });
