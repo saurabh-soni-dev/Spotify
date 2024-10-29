@@ -6,6 +6,7 @@ import CustomTextInput from './common/customTextInput/CustomTextInput';
 import ScalePress from './common/scalePress/ScalePress';
 import CustomSafeAreaView from './common/customSafeAreaView/CustomSafeAreaView';
 import CustomIcon from './common/customIcon/CustomIcon';
+import SlidingText from './common/slidingText/SlidingText';
 export {
   CustomStatusBar,
   CustomText,
@@ -15,4 +16,5 @@ export {
   ScalePress,
   CustomSafeAreaView,
   CustomIcon,
+  SlidingText,
 };

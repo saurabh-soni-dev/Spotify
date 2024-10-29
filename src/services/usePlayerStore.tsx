@@ -4,20 +4,21 @@ import {create} from 'zustand';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import TrackPlayer, {RepeatMode} from 'react-native-track-player';
 import {convertTrack} from '@utility/functions/constant';
+import {ImageSourcePropType} from 'react-native';
 
 interface ArtistProps {
   name?: string;
   bio?: string;
   cover_uri?: string;
 }
-interface Track {
+export interface Track {
   id: number;
-  track_uri?: string;
+  track_uri?: any;
   video_uri?: string;
   title: string;
   lyricist: string;
   artist: ArtistProps;
-  artwork_uri?: string;
+  artwork_uri?: any;
   category: string;
 }
 

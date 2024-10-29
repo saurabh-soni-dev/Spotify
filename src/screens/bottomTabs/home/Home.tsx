@@ -1,24 +1,28 @@
-import {CustomIcon, CustomSafeAreaView} from '@components/componentsIndex';
+import {TrackCard} from '@components/cardIndex';
+import {CustomSafeAreaView} from '@components/componentsIndex';
 import {withPlayer} from '@components/playerIndex';
 import {usePlayerStore} from '@services/usePlayerStore';
 import React, {FC} from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {styles} from './home.style';
-import color from '@theme/color';
 
 const Home: FC = () => {
   const {allTracks} = usePlayerStore();
   return (
     <CustomSafeAreaView>
       <View style={styles.container}>
-        <CustomIcon
-          name="musical-note"
-          iconFamily="Ionicons"
-          size={20}
-          color={color.primary}
+        <FlatList
+          data={allTracks}
+          keyExtractor={(_, index) => {
+            return `${index}`;
+          }}
+          contentContainerStyle={styles.contentContainerStyle}
+          renderItem={({item, index}) => (
+            <TrackCard item={item} index={index} />
+          )}
+          showsVerticalScrollIndicator={false}
         />
       </View>
-      <Text>Home</Text>
     </CustomSafeAreaView>
   );
 };

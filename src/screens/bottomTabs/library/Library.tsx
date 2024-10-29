@@ -1,5 +1,6 @@
 import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import {withPlayer} from '@components/playerIndex';
 
 const Library: FC = () => {
   return (
@@ -9,4 +10,4 @@ const Library: FC = () => {
   );
 };
 
-export default Library;
+export default withPlayer(Library);

@@ -1,5 +1,6 @@
 import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import {withPlayer} from '@components/playerIndex';
 
 const Create: FC = () => {
   return (
@@ -9,4 +10,4 @@ const Create: FC = () => {
   );
 };
 
-export default Create;
+export default withPlayer(Create);

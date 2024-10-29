@@ -1,5 +1,6 @@
 import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import {withPlayer} from '@components/playerIndex';
 
 const Premium: FC = () => {
   return (
@@ -9,4 +10,4 @@ const Premium: FC = () => {
   );
 };
 
-export default Premium;
+export default withPlayer(Premium);

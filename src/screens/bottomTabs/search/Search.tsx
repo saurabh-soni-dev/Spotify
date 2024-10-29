@@ -1,5 +1,6 @@
 import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import {withPlayer} from '@components/playerIndex';
 
 const Search: FC = () => {
   return (
@@ -9,4 +10,4 @@ const Search: FC = () => {
   );
 };
 
-export default Search;
+export default withPlayer(Search);
