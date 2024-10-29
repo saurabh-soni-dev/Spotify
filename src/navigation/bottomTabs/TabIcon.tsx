@@ -13,8 +13,8 @@ interface IconProps {
 }
 
 const styles: ImageStyle = {
-  width: scale(20),
-  height: scale(20),
+  width: scale(28),
+  height: scale(28),
 };
 
 const tabStyles: ViewStyle = {
@@ -24,15 +24,15 @@ const tabStyles: ViewStyle = {
 
 const taxtStylesInActive: TextStyle = {
   textAlign: 'center',
-  marginTop: scale(5),
+  marginTop: scale(4),
   color: color.inactive,
-  fontSize: scale(14),
+  fontSize: scale(12),
 };
 const taxtStylesActive: TextStyle = {
   textAlign: 'center',
-  marginTop: scale(5),
+  marginTop: scale(4),
   color: color.white,
-  fontSize: scale(14),
+  fontSize: scale(12),
 };
 
 const TabIcon: FC<TabProps> = ({name}) => {
