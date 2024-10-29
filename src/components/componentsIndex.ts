@@ -5,6 +5,7 @@ import Header from './common/header/Header';
 import CustomTextInput from './common/customTextInput/CustomTextInput';
 import ScalePress from './common/scalePress/ScalePress';
 import CustomSafeAreaView from './common/customSafeAreaView/CustomSafeAreaView';
+import CustomIcon from './common/customIcon/CustomIcon';
 export {
   CustomStatusBar,
   CustomText,
@@ -13,4 +14,5 @@ export {
   CustomTextInput,
   ScalePress,
   CustomSafeAreaView,
+  CustomIcon,
 };
