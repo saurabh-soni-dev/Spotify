@@ -28,6 +28,7 @@ module.exports = {
           '@navigation': './src/navigation',
           '@screenName': './src/navigation/screenName.ts',
           '@screens': './src/screens',
+          '@services': './src/services',
           '@redux': './src/services/redux',
           '@api': './src/services/api',
           '@config': './src/services/config',

@@ -6,3 +6,13 @@ export const screenWidth: number = Dimensions.get('window').width;
 export const screenHeight: number = Dimensions.get('window').height;
 export const MIN_PLAYER_HEIGHT = BOTTOM_TAB_HEIGHT + 60;
 export const MAX_PLAYER_HEIGHT = screenHeight;
+
+export const convertTrack = (track: any) => {
+  return {
+    id: track.id,
+    url: track.track_uri,
+    title: track.title,
+    artist: track.artist.name,
+    artwork: track.artwork_uri,
+  };
+};
