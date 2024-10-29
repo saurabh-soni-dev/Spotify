@@ -3,9 +3,10 @@ import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import color from '@theme/color';
 import {BOTTOM_TAB_HEIGHT} from '@utility/functions/constant';
 import React, {FC} from 'react';
-import {Alert, StyleSheet} from 'react-native';
-import Animated from 'react-native-reanimated';
+import {Platform, StyleSheet} from 'react-native';
+import Animated, {useAnimatedStyle} from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {scale} from 'react-native-size-scaling';
 import {
   CreateTabIcon,
   HomeTabIcon,
@@ -13,15 +14,27 @@ import {
   PremiumTabIcon,
   SearchTabIcon,
 } from './TabIcon';
+import {useSharedState} from './SharedContext';
 
 const HomeBottomTabBar: FC<BottomTabBarProps> = props => {
   const {state, navigation} = props;
   const {routes} = state;
   const safeAreaInsets = useSafeAreaInsets();
 
+  const {translationY} = useSharedState();
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{translateY: -translationY.value}],
+    };
+  });
+
   return (
     <Animated.View
-      style={[styles.container, {paddingBottom: safeAreaInsets.bottom}]}>
+      style={[
+        styles.container,
+        animatedStyle,
+        {paddingBottom: safeAreaInsets.bottom},
+      ]}>
       {routes.map((route, index) => {
         const isFocused = state.index == index;
 
@@ -42,7 +55,6 @@ const HomeBottomTabBar: FC<BottomTabBarProps> = props => {
             type: 'tabLongPress',
             target: route?.key,
           });
-          Alert.alert(route?.name);
         };
 
         return (
@@ -76,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
+    paddingTop: Platform.OS == 'ios' ? scale(10) : scale(2),
   },
   tabItem: {
     alignItems: 'center',

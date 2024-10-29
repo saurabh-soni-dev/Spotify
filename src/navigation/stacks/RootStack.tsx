@@ -4,6 +4,7 @@ import {RootStackParams} from './rootStackParams';
 import Splash from '@screens/auth/splash/Splash';
 import {Login, MobileLogin, Signup} from '@screens/index';
 import HomeBottomTab from '@navigation/bottomTabs/HomeBottomTab';
+import SharedTransition from '@navigation/bottomTabs/SharedTransition';
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 const RootStack: FC = () => {
@@ -20,7 +21,7 @@ const RootStack: FC = () => {
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="LoginMobile" component={MobileLogin} />
-      <Stack.Screen name="HomeBottomTab" component={HomeBottomTab} />
+      <Stack.Screen name="HomeBottomTab" component={SharedTransition} />
     </Stack.Navigator>
   );
 };

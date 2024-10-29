@@ -1,5 +1,6 @@
-import {View, Text} from 'react-native';
-import React, {FC} from 'react';
+import { View, Text } from 'react-native';
+import React, { FC } from 'react';
+import { withPlayer } from '@components/playerIndex';
 
 const Home: FC = () => {
   return (
@@ -9,4 +10,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default withPlayer(Home);
