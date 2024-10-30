@@ -9,7 +9,12 @@ interface CustomIconProps {
   name: string;
   iconFamily: 'Ionicons' | 'MaterialCommunityIcons' | 'MaterialIcons';
 }
-const CustomIcon: FC<CustomIconProps> = ({color, size, name, iconFamily}) => {
+const CustomIcon: FC<CustomIconProps> = ({
+  color = 'white',
+  size,
+  name,
+  iconFamily,
+}) => {
   return (
     <>
       {iconFamily === 'Ionicons' && (
