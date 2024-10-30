@@ -41,7 +41,8 @@ const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
                 (styles.title,
                 {
                   color: isActive ? color.primary : color.white,
-                  fontSize: scale(16),
+                  fontSize: 16,
+                  lineHeight: 22,
                   fontFamily: font.satoshiBold,
                 })
               }>
@@ -52,9 +53,10 @@ const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
               textStyle={
                 (styles.artistName,
                 {
-                  color: isActive ? color.primary : color.inactive,
-                  fontSize: scale(12),
-                  fontFamily: font.satoshiRegular,
+                  color: isActive ? color.primary : color.white,
+                  fontSize: 12,
+                  fontFamily: font.satoshiMedium,
+                  opacity: 0.6,
                 })
               }>
               {item?.artist?.name}
