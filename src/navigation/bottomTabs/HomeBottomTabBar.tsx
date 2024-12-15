@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingTop: Platform.OS == 'ios' ? scale(10) : scale(2),
+    paddingTop: Platform.OS == 'ios' ? 10 : 2,
   },
   tabItem: {
     alignItems: 'center',

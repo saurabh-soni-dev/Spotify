@@ -4,9 +4,9 @@ import color from '@theme/color';
 import {resetAndNavigate} from '@utility/navigationServices';
 import React, {FC, memo} from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
-import {styles} from './trackCard.style';
-import {scale} from 'react-native-size-scaling';
 import font from '@theme/font';
+import useResponsiveDesign from '@hooks/useResponsiveDesign';
+import {createStyles} from './trackCard.style';
 
 interface TrackCardProps {
   item: Track;
@@ -15,6 +15,8 @@ interface TrackCardProps {
   onPress?: () => void;
 }
 const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
+  const {hp, wp, fs, is} = useResponsiveDesign();
+  const styles = createStyles(hp, wp, fs, is);
   const {currentPlayingTrack, setCurrentPlayingTrack} = usePlayerStore();
   const togglePlayTrack = async () => {
     await setCurrentPlayingTrack(item);
@@ -41,8 +43,7 @@ const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
                 (styles.title,
                 {
                   color: isActive ? color.primary : color.white,
-                  fontSize: 16,
-                  lineHeight: 22,
+                  fontSize: fs(16),
                   fontFamily: font.satoshiBold,
                 })
               }>
@@ -54,9 +55,10 @@ const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
                 (styles.artistName,
                 {
                   color: isActive ? color.primary : color.white,
-                  fontSize: 12,
+                  fontSize: fs(12),
                   fontFamily: font.satoshiMedium,
-                  opacity: 0.6,
+                  opacity: 0.8,
+                  marginTop: hp(0.5),
                 })
               }>
               {item?.artist?.name}
@@ -66,8 +68,8 @@ const TrackCard: FC<TrackCardProps> = ({item, index, onNavigate, onPress}) => {
         <CustomIcon
           name="ellipsis-horizontal-sharp"
           iconFamily="Ionicons"
-          size={scale(20)}
-          color={color.white}
+          size={is(6)}
+          color={color.inactive}
         />
       </View>
     </TouchableOpacity>

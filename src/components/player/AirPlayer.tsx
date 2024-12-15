@@ -8,9 +8,13 @@ import {Image, Platform, TouchableOpacity, View} from 'react-native';
 import ImageColors from 'react-native-image-colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {usePlaybackState, useProgress} from 'react-native-track-player';
-import {styles} from './airPlayer.style';
+import useResponsiveDesign from '@hooks/useResponsiveDesign';
+import {createStyles} from './airPlayer.style';
 
 const AirPlayer: FC = () => {
+  const {wp, hp, fs, is} = useResponsiveDesign();
+  const styles = createStyles(hp, wp, fs, is);
+  //
   const [colors, setColors] = useState([
     color.backgroundLight,
     color.buttonHover,
@@ -76,7 +80,7 @@ const AirPlayer: FC = () => {
             <CustomIcon
               name="broadcast-on-home"
               iconFamily="MaterialIcons"
-              size={30}
+              size={is(8)}
               color={color.inactive}
             />
           </TouchableOpacity>
@@ -84,7 +88,7 @@ const AirPlayer: FC = () => {
             <CustomIcon
               name="add-circle-outline"
               iconFamily="MaterialIcons"
-              size={30}
+              size={is(8)}
               color={color.inactive}
             />
           </TouchableOpacity>
@@ -95,7 +99,7 @@ const AirPlayer: FC = () => {
             <CustomIcon
               name={isPlaying ? 'pause' : 'play-arrow'}
               iconFamily="MaterialIcons"
-              size={35}
+              size={is(8)}
               color={color.white}
             />
           </TouchableOpacity>
