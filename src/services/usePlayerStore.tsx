@@ -4,7 +4,6 @@ import {create} from 'zustand';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import TrackPlayer, {RepeatMode} from 'react-native-track-player';
 import {convertTrack} from '@utility/functions/constant';
-import {ImageSourcePropType} from 'react-native';
 
 interface ArtistProps {
   name?: string;

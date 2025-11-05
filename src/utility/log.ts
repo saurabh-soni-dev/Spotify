@@ -1,3 +1,3 @@
-export const Log = (label:string,value?:string)=>{
-    console.log(label,value)
-}
+export const Log = (label: string, value?: string) => {
+  console.log(label, value);
+};
